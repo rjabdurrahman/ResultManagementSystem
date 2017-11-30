@@ -1,0 +1,9 @@
+.navmenu:hover{
+    -fx-background-color: red;
+}
+.prompt{
+    -fx-prompt-text-fill: #acb5c1;
+}
+.promptd{
+    -fx-prompt-text-fill: #a1a9b5;
+}
