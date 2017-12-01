@@ -26,7 +26,7 @@ public class FXMLDocumentController implements Initializable {
     private Pane admin_menu, register_menu, teacher_menu, student_menu, consultant_menu, advisor_menu;
 
     @FXML
-    private AnchorPane admin_login_panel, register_login_panel;
+    private AnchorPane admin_login_panel, register_login_panel, teacher_login_panel;
 
     @FXML
     private AnchorPane admin_dashboard, register_dashboard;
@@ -48,8 +48,12 @@ public class FXMLDocumentController implements Initializable {
     void mainAct(MouseEvent event) {
         if (event.getSource() == admin_menu) {
             admin_login_panel.setVisible(true);
-        } else if (event.getSource() == register_menu) {
+        } 
+        else if (event.getSource() == register_menu) {
             register_login_panel.setVisible(true);
+        }
+        else if (event.getSource() == teacher_menu) {
+            teacher_login_panel.setVisible(true);
         }
     }
     
@@ -79,15 +83,19 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private JFXButton admin_login_cancel_btn, admin_login_close_btn, register_login_cancel_btn, register_login_close_btn;
+    private JFXButton admin_login_cancel_btn, admin_login_close_btn, register_login_cancel_btn, teacher_login_cancel_btn, teacher_login_close_btn, register_login_close_btn;
 
     //Cancel Button Action
     @FXML
     void login_cancel_act(ActionEvent event) {
         if (event.getSource() == admin_login_cancel_btn || event.getSource() == admin_login_close_btn) {
             admin_login_panel.setVisible(false);
-        } else if (event.getSource() == register_login_cancel_btn || event.getSource() == register_login_close_btn) {
+        } 
+        else if (event.getSource() == register_login_cancel_btn || event.getSource() == register_login_close_btn) {
             register_login_panel.setVisible(false);
+        }
+        else if (event.getSource() == teacher_login_cancel_btn || event.getSource() == teacher_login_close_btn) {
+            teacher_login_panel.setVisible(false);
         }
 
     }
