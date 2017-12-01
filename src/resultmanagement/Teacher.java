@@ -1,14 +1,9 @@
 package resultmanagement;
 
-public class Teacher{
-    private int id;
-    private String username;
-    private String password;
+public class Teacher extends User{
 
     public Teacher(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
+        super(id, username, password);
     }
     public void addResult(){
         //here

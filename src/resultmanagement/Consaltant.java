@@ -1,14 +1,9 @@
 package resultmanagement;
 
-public class Consaltant{
-    private int id;
-    private String username;
-    private String password;
-
+public class Consaltant extends User{
+    
     public Consaltant(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
+        super(id, username, password);
     }
     public void checkResult(){
         //here

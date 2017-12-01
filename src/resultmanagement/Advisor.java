@@ -1,14 +1,9 @@
 package resultmanagement;
 
-public class Advisor{
-    private int id;
-    private String username;
-    private String password;
+public class Advisor extends User{
 
     public Advisor(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
+        super(id, username, password);
     }
     public void analyzeResult(){
         //here
