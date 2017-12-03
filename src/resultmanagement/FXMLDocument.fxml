@@ -476,16 +476,10 @@
       </AnchorPane>
       <AnchorPane fx:id="register_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
-            <AnchorPane prefHeight="420.0" prefWidth="217.0" style="-fx-background-color: #0747A6;">
+            <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
-                  <Label layoutX="40.0" layoutY="5.0" text="Register Dashboard" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Line endX="217.0" stroke="WHITE" />
-                  <Line endX="217.0" layoutY="30.0" stroke="WHITE" />
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="52.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="   Add Student" textFill="WHITE">
+                  <Line endX="217.0" layoutY="175.0" stroke="GREY" />
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="48.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Add Couses" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="14.0" />
                      </graphic>
@@ -493,6 +487,75 @@
                         <Font size="13.0" />
                      </font>
                   </JFXButton>
+                  <Pane prefHeight="35.0" prefWidth="218.0" style="-fx-background-color: gray;">
+                     <children>
+                        <Label layoutX="46.0" layoutY="8.0" text="Register Panel" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Add Teacher" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="14.0" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="128.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Add Student" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CLIPBOARD_CHECK" size="14.0" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="218.0" prefHeight="420.0" prefWidth="581.0">
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="246.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <JFXButton fx:id="register_reg_btn1" layoutX="164.0" layoutY="180.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="register_username_input1" labelFloat="true" layoutX="27.0" layoutY="33.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Username" styleClass="promptd">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check1" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning1" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close1" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <JFXPasswordField fx:id="register_password_input1" labelFloat="true" layoutX="27.0" layoutY="82.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Password" styleClass="prompt">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="register_cpassword_input1" labelFloat="true" layoutX="27.0" layoutY="131.0" prefHeight="25.0" prefWidth="203.0" promptText="Confirm Password" styleClass="prompt">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="17.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Manage Register">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

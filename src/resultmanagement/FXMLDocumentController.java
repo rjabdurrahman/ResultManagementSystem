@@ -16,9 +16,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 public class FXMLDocumentController implements Initializable {
-
+    ObservableList<User> userlist = FXCollections.observableArrayList();
     //Admin
-    Admin admin = new Admin(111, "abdurrahman", "rahman09");
+    Admin admin = new Admin(111, "1", "1");
+    public static ObservableList<Admin> adminlist = FXCollections.observableArrayList();
     //RegisterList
     public static ObservableList<Register> registerlist = FXCollections.observableArrayList();
 
@@ -35,12 +36,14 @@ public class FXMLDocumentController implements Initializable {
     private ToggleGroup admin_rype_toggle, register_rype_toggle;
 
     //Login
-    public boolean login(String username, String password, User user) {
-        if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
-            return true;
-        } else {
-            return false;
+    public boolean login(String username, String password, ObservableList<User> ulist) {
+        //here
+        for(User user : ulist){
+            if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+                return true;
+            }
         }
+        return false;
     }
 
     //Main Menu Action
@@ -76,7 +79,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void loginAct(ActionEvent event) {
         if (event.getSource() == admin_login_btn) {
-            if (login(admin_username_field.getText(),admin_password_field.getText(),admin)) {
+            userlist.clear();
+            userlist.addAll(adminlist);
+            if (login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
                 admin_login_panel.setVisible(false);
                 admin_dashboard.setVisible(true);
             }
@@ -137,7 +142,7 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        adminlist.add(admin);
     }
 
 }
