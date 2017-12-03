@@ -164,7 +164,7 @@
          <children>
             <AnchorPane layoutX="215.0" layoutY="62.0" prefHeight="258.0" prefWidth="374.0" style="-fx-background-color: #ededed;">
                <children>
-                  <JFXTextField layoutX="84.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" styleClass="prompt">
+                  <JFXTextField fx:id="register_username_field" layoutX="84.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" styleClass="prompt">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -200,7 +200,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <JFXPasswordField layoutX="86.0" layoutY="139.0" prefHeight="25.0" prefWidth="230.0" promptText="Password" styleClass="prompt">
+                  <JFXPasswordField fx:id="register_password_field" layoutX="86.0" layoutY="139.0" prefHeight="25.0" prefWidth="230.0" promptText="Password" styleClass="prompt">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -418,7 +418,7 @@
                         <Font size="13.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="128.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Log Out" textFill="WHITE">
+                  <JFXButton fx:id="admin_logout_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="128.0" onAction="#logoutAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Log Out" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="CLIPBOARD_CHECK" size="14.0" />
                      </graphic>

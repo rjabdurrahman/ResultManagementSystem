@@ -67,13 +67,13 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private JFXButton admin_login_btn, register_login_btn;
+    private JFXButton admin_login_btn, admin_logout_btn, register_login_btn;
     
     @FXML
-    private JFXTextField admin_username_field;
+    private JFXTextField admin_username_field,register_username_field;
 
     @FXML
-    private JFXPasswordField admin_password_field;
+    private JFXPasswordField admin_password_field,register_password_field;
     
     //Login Button Action
     @FXML
@@ -89,7 +89,20 @@ public class FXMLDocumentController implements Initializable {
             if (true) {
                 register_login_panel.setVisible(false);
                 register_dashboard.setVisible(true);
+                userlist.clear();
+                userlist.addAll(registerlist);
+                if (login(register_username_field.getText(),register_password_field.getText(),userlist)) {
+                    register_login_panel.setVisible(false);
+                    register_dashboard.setVisible(true);
+                }
             }
+        }
+    }
+    //LogOut Button Action
+    @FXML
+    void logoutAct(ActionEvent event) {
+        if (event.getSource() == admin_logout_btn) {
+            admin_dashboard.setVisible(false);
         }
     }
     
