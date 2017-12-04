@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -75,6 +76,12 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private JFXPasswordField admin_password_field,register_password_field;
     
+    //Field Cleaner
+    public void clear(TextField ... field){
+        for(TextField f : field){
+            f.clear();
+        }
+    }
     //Login Button Action
     @FXML
     void loginAct(ActionEvent event) {
@@ -145,6 +152,7 @@ public class FXMLDocumentController implements Initializable {
             //Check existed username needed
             if(register_password_input.getText().equals(register_cpassword_input.getText())){
                 admin.manageRegister(register_username_input.getText(), register_password_input.getText(), registerlist);
+                clear(register_username_input, register_password_input, register_cpassword_input);
                 for(Register r: registerlist)
                     System.out.println(r.getUsername());
             }
