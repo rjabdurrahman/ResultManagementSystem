@@ -434,7 +434,7 @@
                <children>
                   <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="226.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="register_reg_btn" layoutX="164.0" layoutY="174.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                        <JFXButton fx:id="admin_register_add_btn" layoutX="164.0" layoutY="174.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>
@@ -495,9 +495,9 @@
                         <Font name="Century Gothic" size="15.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="14.0" layoutY="296.0" minHeight="-Infinity" prefHeight="115.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                  <AnchorPane layoutX="14.0" layoutY="294.0" minHeight="-Infinity" prefHeight="115.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton layoutX="139.0" layoutY="69.0" onAction="#adminAct" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0747A6;" text="Remove" textFill="WHITE">
+                        <JFXButton fx:id="admin_register_remove_btn" layoutX="139.0" layoutY="69.0" onAction="#adminAct" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0747A6;" text="Remove" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="MINUS_SQUARE" size="14.0" />
                            </graphic>
@@ -505,7 +505,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXTextField labelFloat="true" layoutX="24.0" layoutY="25.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Username" styleClass="promptd">
+                        <JFXTextField fx:id="register_username_input_remove" labelFloat="true" layoutX="24.0" layoutY="25.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Username" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -520,7 +520,7 @@
                         <FontAwesomeIconView fx:id="addst_warning_close3" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
                      </children>
                   </AnchorPane>
-                  <Label layoutX="14.0" layoutY="269.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Remove Register">
+                  <Label layoutX="17.0" layoutY="267.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Remove Register">
                      <font>
                         <Font name="Century Gothic" size="15.0" />
                      </font>

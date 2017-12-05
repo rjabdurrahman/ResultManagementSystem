@@ -1,6 +1,7 @@
 package resultmanagement;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
@@ -138,10 +139,10 @@ public class FXMLDocumentController implements Initializable {
     }
     //Admins Panel
     @FXML
-    private JFXButton admin_logout_btn, register_reg_btn;
+    private JFXButton admin_register_add_btn,admin_register_remove_btn,admin_logout_btn;
     
     @FXML
-    private JFXTextField register_username_input;
+    private JFXTextField register_username_input,register_username_input_remove;
 
     @FXML
     private JFXPasswordField register_password_input, register_cpassword_input;
@@ -161,7 +162,7 @@ public class FXMLDocumentController implements Initializable {
         if(event.getSource() == admin_logout_btn){
             admin_dashboard.setVisible(false);
         }
-        else if(event.getSource()==register_reg_btn){//Worong Here
+        else if(event.getSource()==admin_register_add_btn){//Worong Here
             //Check existed username needed
             if(register_password_input.getText().equals(register_cpassword_input.getText())){
                 admin.manageRegister(register_username_input.getText(), register_password_input.getText(), registerlist);
@@ -170,12 +171,15 @@ public class FXMLDocumentController implements Initializable {
                 register_id_column.setCellValueFactory(new PropertyValueFactory<>("id"));
                 register_name_column.setCellValueFactory(new PropertyValueFactory<>("username"));
                 register_list_table.setItems(registerlist);
-                for(Register r: registerlist)
-                    System.out.println(r.getUsername());
             }
             else
-                System.out.println("NO");
+                JOptionPane.showMessageDialog(null, "Password Not Matched!");
             //Register Added End
+        }
+        else if(event.getSource()==admin_register_remove_btn){
+            admin.manageRegister(register_username_input_remove.getText(), registerlist);
+            clear(register_username_input_remove);
+            register_list_table.setItems(registerlist);
         }
     }
     

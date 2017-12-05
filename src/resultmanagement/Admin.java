@@ -11,9 +11,17 @@ public abstract class Admin extends User{
     public void manageRegister(String username,String password,ObservableList<Register> rlist){
         rlist.add(new Register(121,username,password));
     }
-    public void manageRegister(){
-        //here
+    //OverLoad manageRegister
+    public void manageRegister(String username,ObservableList<Register> rlist){
+        for(Register r : rlist){
+            if(r.getUsername().equals(username)){
+                rlist.remove(r);
+                break;
+            }
+        }
+        //Register Remove end.
     }
+    
     public void margeResult(){
         //here
     }
