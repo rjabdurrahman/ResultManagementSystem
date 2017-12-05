@@ -124,9 +124,11 @@ public class FXMLDocumentController implements Initializable {
     void login_cancel_act(ActionEvent event) {
         if (event.getSource() == admin_login_cancel_btn || event.getSource() == admin_login_close_btn) {
             admin_login_panel.setVisible(false);
+            clear(admin_username_field,admin_password_field);
         } 
         else if (event.getSource() == register_login_cancel_btn || event.getSource() == register_login_close_btn) {
             register_login_panel.setVisible(false);
+            clear(register_username_field,register_password_field);
         }
         else if (event.getSource() == teacher_login_cancel_btn || event.getSource() == teacher_login_close_btn) {
             teacher_login_panel.setVisible(false);
