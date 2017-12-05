@@ -131,7 +131,7 @@
                   </JFXButton>
                   <MaterialDesignIconView fill="#0747a6" glyphName="ACCOUNT" layoutX="55.0" layoutY="124.0" size="22.0" />
                   <MaterialDesignIconView fill="#0747a6" glyphName="KEY" layoutX="55.0" layoutY="163.0" size="22.0" />
-                  <JFXRadioButton layoutX="45.0" layoutY="63.0" text="Global">
+                  <JFXRadioButton fx:id="admin_global_radio" layoutX="45.0" layoutY="63.0" text="Global">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -139,7 +139,7 @@
                         <ToggleGroup fx:id="admin_rype_toggle" />
                      </toggleGroup>
                   </JFXRadioButton>
-                  <JFXRadioButton layoutX="172.0" layoutY="63.0" text="Local" toggleGroup="$admin_rype_toggle">
+                  <JFXRadioButton fx:id="admin_local_radio" layoutX="172.0" layoutY="63.0" text="Local" toggleGroup="$admin_rype_toggle">
                      <font>
                         <Font size="14.0" />
                      </font>

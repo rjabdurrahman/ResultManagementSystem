@@ -2,6 +2,7 @@ package resultmanagement;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -59,6 +60,9 @@ public class FXMLDocumentController implements Initializable {
             advisor_login_panel.setVisible(true);
         }
     }
+    //Login Panels Fields
+    @FXML
+    private JFXRadioButton admin_global_radio, admin_local_radio;
     
     @FXML
     private JFXButton admin_login_btn, register_login_btn;
@@ -81,7 +85,7 @@ public class FXMLDocumentController implements Initializable {
         if (event.getSource() == admin_login_btn) {
             userlist.clear();
             userlist.addAll(gadminlist);
-            if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
+            if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist) && admin_global_radio.isSelected()) {
                 admin_login_panel.setVisible(false);
                 admin_dashboard.setVisible(true);
                 clear(admin_username_field,admin_password_field);
