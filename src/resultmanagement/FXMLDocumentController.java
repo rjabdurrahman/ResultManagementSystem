@@ -73,7 +73,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private JFXButton admin_login_btn, admin_logout_btn, register_login_btn;
+    private JFXButton admin_login_btn, register_login_btn;
     
     @FXML
     private JFXTextField admin_username_field,register_username_field;
@@ -115,13 +115,6 @@ public class FXMLDocumentController implements Initializable {
             }
         }
     }
-    //LogOut Button Action
-    @FXML
-    void logoutAct(ActionEvent event) {
-        if (event.getSource() == admin_logout_btn) {
-            admin_dashboard.setVisible(false);
-        }
-    }
     
     @FXML
     private JFXButton admin_login_cancel_btn, admin_login_close_btn, register_login_cancel_btn, register_login_close_btn, teacher_login_cancel_btn, teacher_login_close_btn, consultant_login_cancel_btn, consultant_login_close_btn, advisor_login_cancel_btn, advisor_login_close_btn;
@@ -148,14 +141,15 @@ public class FXMLDocumentController implements Initializable {
     }
     //Admins Panel
     @FXML
+    private JFXButton admin_logout_btn, register_reg_btn;
+    
+    @FXML
     private JFXTextField register_username_input;
 
     @FXML
     private JFXPasswordField register_password_input, register_cpassword_input;
     
-    @FXML
-    private JFXButton register_reg_btn;
-    // -- Register List
+    // -- Register List Table
     @FXML
     private TableView<Register> register_list_table;
 
@@ -167,7 +161,10 @@ public class FXMLDocumentController implements Initializable {
     // -- Amin Actions
     @FXML
     void adminAct(ActionEvent event) {
-        if(event.getSource()==register_reg_btn){
+        if(event.getSource() == admin_logout_btn){
+            admin_dashboard.setVisible(false);
+        }
+        else if(event.getSource()==register_reg_btn){//Worong Here
             //Check existed username needed
             if(register_password_input.getText().equals(register_cpassword_input.getText())){
                 admin.manageRegister(register_username_input.getText(), register_password_input.getText(), registerlist);
@@ -181,6 +178,18 @@ public class FXMLDocumentController implements Initializable {
             }
             else
                 System.out.println("NO");
+            //Register Added End
+        }
+    }
+    
+    //Registers Panel
+    @FXML
+    private JFXButton register_logout_btn;
+    @FXML
+    // -- Register Actions
+    void registerAct(ActionEvent event) {
+        if(event.getSource() == register_logout_btn){
+            register_dashboard.setVisible(false);
         }
     }
     
