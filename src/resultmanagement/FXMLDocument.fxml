@@ -395,7 +395,7 @@
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
                   <Line endX="217.0" layoutY="175.0" stroke="GREY" />
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="48.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Manage Admin" textFill="WHITE">
+                  <JFXButton fx:id="admin_manageAdmin_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="48.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Manage Admin" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_STAR" size="16.0" />
                      </graphic>
@@ -412,7 +412,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Manage Register" textFill="WHITE">
+                  <JFXButton fx:id="admin_manageRegister_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Manage Register" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
                      </graphic>
@@ -430,7 +430,7 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="218.0" prefHeight="420.0" prefWidth="581.0">
+            <AnchorPane fx:id="admin_manageRegister_panel" layoutX="218.0" prefHeight="420.0" prefWidth="581.0">
                <children>
                   <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="226.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
@@ -485,7 +485,7 @@
                         <TableView fx:id="register_list_table" layoutY="5.0" prefHeight="378.0" prefWidth="272.0" tableMenuButtonVisible="true">
                           <columns>
                             <TableColumn fx:id="register_id_column" prefWidth="75.0" text="ID" />
-                            <TableColumn fx:id="register_name_column" prefWidth="187.0" text="Name" />
+                            <TableColumn fx:id="register_name_column" prefWidth="187.0" text="UserName" />
                           </columns>
                         </TableView>
                      </children>
