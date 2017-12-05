@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 
-public class User{
+public abstract class User{
     private SimpleIntegerProperty id;
     private SimpleStringProperty username;
     private String password;

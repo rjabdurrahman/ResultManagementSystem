@@ -2,7 +2,7 @@ package resultmanagement;
 
 import javafx.collections.ObservableList;
 
-public class Admin extends User{
+public abstract class Admin extends User{
 
     public Admin(int id, String username, String password) {
         super(id, username, password);
