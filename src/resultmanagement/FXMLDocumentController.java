@@ -23,8 +23,8 @@ import javax.swing.JOptionPane;
 public class FXMLDocumentController implements Initializable {
     ObservableList<User> userlist = FXCollections.observableArrayList();
     //Admin
-    Admin admin = new Admin(111, "1", "1");
-    public static ObservableList<Admin> adminlist = FXCollections.observableArrayList();
+    GlobalAdmin admin = new GlobalAdmin(111, "1", "1");
+    public static ObservableList<GlobalAdmin> gadminlist = FXCollections.observableArrayList();
     //RegisterList
     public static ObservableList<Register> registerlist = FXCollections.observableArrayList();
 
@@ -80,7 +80,7 @@ public class FXMLDocumentController implements Initializable {
     void loginAct(ActionEvent event) {
         if (event.getSource() == admin_login_btn) {
             userlist.clear();
-            userlist.addAll(adminlist);
+            userlist.addAll(gadminlist);
             if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
                 admin_login_panel.setVisible(false);
                 admin_dashboard.setVisible(true);
@@ -185,7 +185,7 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        adminlist.add(admin);
+        gadminlist.add(admin);
     }
 
 }
