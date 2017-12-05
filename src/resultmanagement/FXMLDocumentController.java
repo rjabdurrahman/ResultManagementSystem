@@ -22,11 +22,14 @@ import javafx.scene.layout.Pane;
 import javax.swing.JOptionPane;
 
 public class FXMLDocumentController implements Initializable {
+    //Temperory User List
     ObservableList<User> userlist = FXCollections.observableArrayList();
-    //Admin
+    //Global Admin
     GlobalAdmin admin = new GlobalAdmin(111, "1", "1");
-    public static ObservableList<GlobalAdmin> gadminlist = FXCollections.observableArrayList();
-    //RegisterList
+    public static ObservableList<GlobalAdmin> global_adminlist = FXCollections.observableArrayList();
+    //Local Admin List
+    public static ObservableList<LocalAdmin> local_adminlist = FXCollections.observableArrayList();
+    //Register List
     public static ObservableList<Register> registerlist = FXCollections.observableArrayList();
 
     @FXML
@@ -84,7 +87,7 @@ public class FXMLDocumentController implements Initializable {
     void loginAct(ActionEvent event) {
         if (event.getSource() == admin_login_btn) {
             userlist.clear();
-            userlist.addAll(gadminlist);
+            userlist.addAll(global_adminlist);
             if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist) && admin_global_radio.isSelected()) {
                 admin_login_panel.setVisible(false);
                 admin_dashboard.setVisible(true);
@@ -189,7 +192,7 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        gadminlist.add(admin);
+        global_adminlist.add(admin);
     }
 
 }
