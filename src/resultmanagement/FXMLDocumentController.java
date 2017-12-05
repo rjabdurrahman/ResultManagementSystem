@@ -3,6 +3,7 @@ package resultmanagement;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.awt.Dialog;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javax.swing.JOptionPane;
 
 public class FXMLDocumentController implements Initializable {
     ObservableList<User> userlist = FXCollections.observableArrayList();
@@ -94,17 +96,22 @@ public class FXMLDocumentController implements Initializable {
             if (login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
                 admin_login_panel.setVisible(false);
                 admin_dashboard.setVisible(true);
+                clear(admin_username_field,admin_password_field);
             }
-        } else if (event.getSource() == register_login_btn) {
-            if (true) {
+            else{
+                JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
+            }
+        } 
+        else if (event.getSource() == register_login_btn) {
+            userlist.clear();
+            userlist.addAll(registerlist);
+            if (login(register_username_field.getText(),register_password_field.getText(),userlist)) {
                 register_login_panel.setVisible(false);
                 register_dashboard.setVisible(true);
-                userlist.clear();
-                userlist.addAll(registerlist);
-                if (login(register_username_field.getText(),register_password_field.getText(),userlist)) {
-                    register_login_panel.setVisible(false);
-                    register_dashboard.setVisible(true);
-                }
+                clear(register_username_field,register_password_field);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
             }
         }
     }
