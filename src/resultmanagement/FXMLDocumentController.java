@@ -10,8 +10,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -136,7 +139,7 @@ public class FXMLDocumentController implements Initializable {
         }
 
     }
-    //Admins Action
+    //Admins Panel
     @FXML
     private JFXTextField register_username_input;
 
@@ -145,7 +148,16 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private JFXButton register_reg_btn;
-    
+    // -- Register List
+    @FXML
+    private TableView<Register> register_list_table;
+
+    @FXML
+    private TableColumn<Register, Integer> register_id_column;
+
+    @FXML
+    private TableColumn<Register, String> register_name_column;
+    // -- Amin Actions
     @FXML
     void adminAct(ActionEvent event) {
         if(event.getSource()==register_reg_btn){
@@ -153,6 +165,10 @@ public class FXMLDocumentController implements Initializable {
             if(register_password_input.getText().equals(register_cpassword_input.getText())){
                 admin.manageRegister(register_username_input.getText(), register_password_input.getText(), registerlist);
                 clear(register_username_input, register_password_input, register_cpassword_input);
+                //Table Data Load
+                register_id_column.setCellValueFactory(new PropertyValueFactory<>("id"));
+                register_name_column.setCellValueFactory(new PropertyValueFactory<>("username"));
+                register_list_table.setItems(registerlist);
                 for(Register r: registerlist)
                     System.out.println(r.getUsername());
             }
