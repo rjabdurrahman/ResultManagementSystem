@@ -3,7 +3,6 @@ package resultmanagement;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import java.awt.Dialog;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -40,17 +39,6 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private ToggleGroup admin_rype_toggle, register_rype_toggle;
-
-    //Login
-    public boolean login(String username, String password, ObservableList<User> ulist) {
-        //here
-        for(User user : ulist){
-            if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     //Main Menu Action
     @FXML
@@ -93,7 +81,7 @@ public class FXMLDocumentController implements Initializable {
         if (event.getSource() == admin_login_btn) {
             userlist.clear();
             userlist.addAll(adminlist);
-            if (login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
+            if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
                 admin_login_panel.setVisible(false);
                 admin_dashboard.setVisible(true);
                 clear(admin_username_field,admin_password_field);
@@ -105,7 +93,7 @@ public class FXMLDocumentController implements Initializable {
         else if (event.getSource() == register_login_btn) {
             userlist.clear();
             userlist.addAll(registerlist);
-            if (login(register_username_field.getText(),register_password_field.getText(),userlist)) {
+            if (User.login(register_username_field.getText(),register_password_field.getText(),userlist)) {
                 register_login_panel.setVisible(false);
                 register_dashboard.setVisible(true);
                 clear(register_username_field,register_password_field);

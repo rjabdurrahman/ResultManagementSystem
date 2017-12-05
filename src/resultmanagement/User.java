@@ -2,6 +2,7 @@ package resultmanagement;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableList;
 
 public class User{
     private SimpleIntegerProperty id;
@@ -24,5 +25,15 @@ public class User{
     
     public String getPassword() {
         return password;
+    }
+    
+    //Login
+    public static boolean login(String username, String password, ObservableList<User> ulist) {
+        for(User user : ulist){
+            if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
