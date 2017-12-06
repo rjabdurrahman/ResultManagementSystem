@@ -138,7 +138,10 @@ public class FXMLDocumentController implements Initializable {
     }
     //Admins Panel
     @FXML
-    private JFXButton admin_register_add_btn,admin_register_remove_btn,admin_logout_btn;
+    private AnchorPane admin_manageAdmin_panel, admin_manageRegister_panel;
+    
+    @FXML
+    private JFXButton admin_manageAdmin_btn,admin_manageRegister_btn,admin_register_add_btn,admin_register_remove_btn,admin_logout_btn;
     
     @FXML
     private JFXTextField register_username_input,register_username_input_remove;
@@ -160,6 +163,13 @@ public class FXMLDocumentController implements Initializable {
     void adminAct(ActionEvent event) {
         if(event.getSource() == admin_logout_btn){
             admin_dashboard.setVisible(false);
+        }
+        if(event.getSource() == admin_manageAdmin_btn){
+            admin_manageAdmin_panel.toFront();
+        }
+        if(event.getSource() == admin_manageRegister_btn){
+            admin_manageRegister_panel.setVisible(true);
+            admin_manageRegister_panel.toFront();
         }
         else if(event.getSource()==admin_register_add_btn){//Worong Here
             //Check existed username needed
