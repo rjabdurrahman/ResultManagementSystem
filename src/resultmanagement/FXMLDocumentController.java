@@ -164,6 +164,12 @@ public class FXMLDocumentController implements Initializable {
         else if(event.getSource()==admin_register_add_btn){//Worong Here
             //Check existed username needed
             if(register_password_input.getText().equals(register_cpassword_input.getText())){
+                for(Register r: registerlist){
+                    if(r.getUsername().equals(register_username_input.getText())){
+                        JOptionPane.showMessageDialog(null, "Usernaem Already Existed!");
+                        return;
+                    }
+                } //Check Repeating Username End
                 admin.manageRegister(register_username_input.getText(), register_password_input.getText(), registerlist);
                 clear(register_username_input, register_password_input, register_cpassword_input);
                 //Table Data Load
