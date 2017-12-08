@@ -6,6 +6,7 @@ public class GlobalAdmin extends Admin{
         super(id, username, password);
     }
     
+    @Override
     public void manageAdmin(){
         //here
     }
