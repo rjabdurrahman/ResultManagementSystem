@@ -144,10 +144,10 @@ public class FXMLDocumentController implements Initializable {
     private JFXButton admin_manageAdmin_btn,admin_manageRegister_btn,admin_register_add_btn,admin_register_remove_btn,admin_logout_btn;
     
     @FXML
-    private JFXTextField register_username_input,register_username_input_remove;
+    private JFXTextField register_username_input,register_username_input_remove,localAdmin_username_input;
 
     @FXML
-    private JFXPasswordField register_password_input, register_cpassword_input;
+    private JFXPasswordField register_password_input, register_cpassword_input,localAdmin_password_input,localAdmin_cpassword_input;
     
     // -- Register List Table
     @FXML
@@ -196,6 +196,18 @@ public class FXMLDocumentController implements Initializable {
             clear(register_username_input_remove);
             register_list_table.setItems(registerlist);
         }
+        //Golbal Admins Local Admin
+        if(localAdmin_password_input.getText().equals(localAdmin_cpassword_input.getText())){
+            for(LocalAdmin r: local_adminlist){
+                if(r.getUsername().equals(localAdmin_username_input.getText())){
+                    JOptionPane.showMessageDialog(null, "Usernaem Already Existed!");
+                    return;
+                }
+            } //Check Repeating Username End
+            admin.manageAdmin(localAdmin_username_input.getText(), localAdmin_password_input.getText(), local_adminlist);
+            clear(localAdmin_username_input, localAdmin_password_input, localAdmin_cpassword_input);
+        }
+        
     }
     
     //Registers Panel

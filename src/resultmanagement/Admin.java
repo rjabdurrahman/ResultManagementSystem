@@ -21,7 +21,7 @@ public abstract class Admin extends User{
         }
         //Register Remove end.
     }
-    
+    //abstract methodp
     abstract void manageAdmin();
     
     public void margeResult(){
