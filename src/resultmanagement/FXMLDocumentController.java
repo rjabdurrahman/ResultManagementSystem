@@ -39,7 +39,7 @@ public class FXMLDocumentController implements Initializable {
     private AnchorPane admin_login_panel, register_login_panel, teacher_login_panel, consultant_login_panel, advisor_login_panel;
 
     @FXML
-    private AnchorPane admin_dashboard, register_dashboard;
+    private AnchorPane admin_dashboard,localAdmin_dashboard, register_dashboard;
     
     @FXML
     private ToggleGroup admin_rype_toggle, register_rype_toggle;
@@ -85,10 +85,13 @@ public class FXMLDocumentController implements Initializable {
     //Login Button Action
     @FXML
     void loginAct(ActionEvent event) {
-        if (event.getSource() == admin_login_btn) {
+        if (event.getSource() == admin_login_btn && !admin_global_radio.isSelected() && !admin_local_radio.isSelected()) {
+            JOptionPane.showMessageDialog(null,"Please Select Admin Type!");
+        }
+        else if (event.getSource() == admin_login_btn && admin_global_radio.isSelected()) {
             userlist.clear();
             userlist.addAll(global_adminlist);
-            if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist) && admin_global_radio.isSelected()) {
+            if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
                 admin_login_panel.setVisible(false);
                 admin_dashboard.setVisible(true);
                 clear(admin_username_field,admin_password_field);
@@ -96,7 +99,19 @@ public class FXMLDocumentController implements Initializable {
             else{
                 JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
             }
-        } 
+        } //Global Admin Login End
+        else if (event.getSource() == admin_login_btn && admin_local_radio.isSelected()) {
+            userlist.clear();
+            userlist.addAll(local_adminlist);
+            if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
+                admin_login_panel.setVisible(false);
+                localAdmin_dashboard.setVisible(true);
+                clear(admin_username_field,admin_password_field);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
+            }
+        }//Local Admin Login end
         else if (event.getSource() == register_login_btn) {
             userlist.clear();
             userlist.addAll(registerlist);
