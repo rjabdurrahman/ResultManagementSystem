@@ -106,6 +106,10 @@ public class FXMLDocumentController implements Initializable {
             if (User.login(admin_username_field.getText(),admin_password_field.getText(),userlist)) {
                 admin_login_panel.setVisible(false);
                 localAdmin_dashboard.setVisible(true);
+                //Load Table Data
+                register_id_column2.setCellValueFactory(new PropertyValueFactory<>("id"));
+                register_name_column2.setCellValueFactory(new PropertyValueFactory<>("username"));
+                register_list_table2.setItems(registerlist);
                 clear(admin_username_field,admin_password_field);
             }
             else{
@@ -183,6 +187,10 @@ public class FXMLDocumentController implements Initializable {
             admin_manageAdmin_panel.toFront();
         }
         else if(event.getSource() == admin_manageRegister_btn){
+            register_id_column.setCellValueFactory(new PropertyValueFactory<>("id"));
+            register_name_column.setCellValueFactory(new PropertyValueFactory<>("username"));
+            System.out.println("clicked");
+            register_list_table.setItems(registerlist);
             admin_manageRegister_panel.setVisible(true);
             admin_manageRegister_panel.toFront();
         }
@@ -199,8 +207,6 @@ public class FXMLDocumentController implements Initializable {
                 admin.manageRegister(register_username_input.getText(), register_password_input.getText(), registerlist);
                 clear(register_username_input, register_password_input, register_cpassword_input);
                 //Table Data Load
-                register_id_column.setCellValueFactory(new PropertyValueFactory<>("id"));
-                register_name_column.setCellValueFactory(new PropertyValueFactory<>("username"));
                 register_list_table.setItems(registerlist);
             }
             else
@@ -282,8 +288,6 @@ public class FXMLDocumentController implements Initializable {
                 admin.manageRegister(register_username_input2.getText(), register_password_input2.getText(), registerlist);
                 clear(register_username_input2, register_password_input2, register_cpassword_input2);
                 //Table Data Load
-                register_id_column2.setCellValueFactory(new PropertyValueFactory<>("id"));
-                register_name_column2.setCellValueFactory(new PropertyValueFactory<>("username"));
                 register_list_table2.setItems(registerlist);
             }
             else
