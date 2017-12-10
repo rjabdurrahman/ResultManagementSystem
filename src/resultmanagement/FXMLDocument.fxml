@@ -862,7 +862,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="register_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="register_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
@@ -984,9 +984,9 @@
                         <Font name="Century Gothic" size="15.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="17.0" layoutY="241.0" prefHeight="149.0" prefWidth="453.0" style="-fx-background-color: #f7f7f7;">
+                  <AnchorPane layoutX="14.0" layoutY="242.0" prefHeight="177.0" prefWidth="269.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="teacher_add_btn" layoutX="305.0" layoutY="17.0" onAction="#registerAct" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #0747A6;" text=" Add Teacher" textFill="WHITE">
+                        <JFXButton fx:id="teacher_add_btn" layoutX="155.0" layoutY="142.0" onAction="#registerAct" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>

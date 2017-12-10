@@ -197,7 +197,6 @@ public class FXMLDocumentController implements Initializable {
         else if(event.getSource() == admin_manageRegister_btn){
             register_id_column.setCellValueFactory(new PropertyValueFactory<>("id"));
             register_name_column.setCellValueFactory(new PropertyValueFactory<>("username"));
-            System.out.println("clicked");
             register_list_table.setItems(registerlist);
             admin_manageRegister_panel.setVisible(true);
             admin_manageRegister_panel.toFront();
