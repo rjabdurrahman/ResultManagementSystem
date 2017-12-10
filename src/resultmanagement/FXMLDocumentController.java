@@ -400,7 +400,15 @@ public class FXMLDocumentController implements Initializable {
             teacher_dashboard.setVisible(false);
         }
         else if(event.getSource() == teacher_markAdd_btn){
-            System.out.println("ok");
+            teacher.addResult(Integer.parseInt(techer_studentId_input.getText()), Integer.parseInt(teacherCourse_combo.getValue()), Double.parseDouble(teacher_mark_input.getText()));
+            clear(techer_studentId_input,teacher_mark_input);
+            JOptionPane.showMessageDialog(null, "GPA Added Successfully!");
+            student_list.forEach(s->{
+                System.out.println(s.getId());
+                s.courseList.forEach(c->{
+                    System.out.println(c.getGpa());
+                });
+            });
         }
     }
     

@@ -10,8 +10,17 @@ public class Teacher extends User{
         super(id, username, password);
     }
     
-    public void addResult(int sid,int code,double gpa){
-        //here
+    public void addResult(int sid, int code, double gpa){
+        for(Student s : FXMLDocumentController.student_list){
+            if(s.getId()==sid){
+                for(Course c : s.courseList){
+                    if(c.getCode()==code){
+                        c.setGpa(gpa);
+                        break;
+                    }
+                }
+            }
+        }
     }
     public void reportStudent(){
         //here

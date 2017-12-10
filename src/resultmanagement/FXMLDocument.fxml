@@ -863,7 +863,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="register_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="register_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
@@ -1064,7 +1064,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="teacher_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+      <AnchorPane fx:id="teacher_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
@@ -1129,7 +1129,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="teacher_mark_input" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Marks" styleClass="promptd">
+                        <JFXTextField fx:id="teacher_mark_input" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="GPA" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
