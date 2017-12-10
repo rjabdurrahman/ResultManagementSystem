@@ -24,9 +24,6 @@ public abstract class Admin extends User{
     //abstract methodp
     abstract void manageAdmin();
     
-    public void margeResult(){
-        //here
-    }
     public void publishResult(){
         //here
     }

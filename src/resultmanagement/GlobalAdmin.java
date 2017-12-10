@@ -12,7 +12,7 @@ public class GlobalAdmin extends Admin{
     public void manageAdmin(){
         //here
     }
-    //Overloaded ManageAdmin
+    //Overloaded Overridden ManageAdmin
     public void manageAdmin(String username,String password,ObservableList<LocalAdmin> alist){
         alist.add(new LocalAdmin(124, username, password));
     }

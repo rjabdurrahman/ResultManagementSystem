@@ -164,10 +164,10 @@ public class FXMLDocumentController implements Initializable {
         if(event.getSource() == admin_logout_btn){
             admin_dashboard.setVisible(false);
         }
-        if(event.getSource() == admin_manageAdmin_btn){
+        else if(event.getSource() == admin_manageAdmin_btn){
             admin_manageAdmin_panel.toFront();
         }
-        if(event.getSource() == admin_manageRegister_btn){
+        else if(event.getSource() == admin_manageRegister_btn){
             admin_manageRegister_panel.setVisible(true);
             admin_manageRegister_panel.toFront();
         }
