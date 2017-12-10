@@ -9,7 +9,7 @@ public class LocalAdmin extends Admin{
     }
 
     @Override
-    void manageAdmin(String username, ObservableList<LocalAdmin> alist) {
+    void manageAdmin(String username, String password, ObservableList<LocalAdmin> alist) {
         //here
     }
 }

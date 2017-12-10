@@ -235,8 +235,15 @@ public class FXMLDocumentController implements Initializable {
         
     }
     //Local Admin Panel
-    
+    @FXML
+    JFXButton localAdmin_logout_btn;
     // -- Local Admin Actions
+    @FXML
+    void localAdminAct(ActionEvent event) {
+        if(event.getSource() == localAdmin_logout_btn){
+            localAdmin_dashboard.setVisible(false);
+        }
+    }
     
     //Registers Panel
     @FXML
