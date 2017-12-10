@@ -254,7 +254,7 @@ public class FXMLDocumentController implements Initializable {
     AnchorPane localAdmin_manageRegister_panel,localAdmin_myMenu_panel;
     
     @FXML
-    JFXButton localAdmin_logout_btn,localAdmin_manageRegister_btn,localAdmin_myMenu_btn,admin_register_add_btn2;
+    JFXButton localAdmin_logout_btn,localAdmin_manageRegister_btn,localAdmin_myMenu_btn,admin_register_add_btn2,admin_register_remove_btn2;
     
     @FXML
     private JFXTextField register_username_input2,register_username_input_remove2,localAdmin_username_input2,localAdmin_username_input_remove2;
@@ -296,16 +296,20 @@ public class FXMLDocumentController implements Initializable {
                 admin.manageRegister(register_username_input2.getText(), register_password_input2.getText(), registerlist);
                 clear(register_username_input2, register_password_input2, register_cpassword_input2);
                 //Table Data Load
+                register_id_column2.setCellValueFactory(new PropertyValueFactory<>("id"));
+                register_name_column2.setCellValueFactory(new PropertyValueFactory<>("username"));
                 register_list_table2.setItems(registerlist);
             }
             else
                 JOptionPane.showMessageDialog(null, "Password Not Matched!");
             //Register Added End
         }
-        else if(event.getSource()==admin_register_remove_btn){
-            admin.manageRegister(register_username_input_remove.getText(), registerlist);
-            clear(register_username_input_remove);
-            register_list_table.setItems(registerlist);
+        else if(event.getSource()==admin_register_remove_btn2){
+            admin.manageRegister(register_username_input_remove2.getText(), registerlist);
+            clear(register_username_input_remove2);
+            register_id_column2.setCellValueFactory(new PropertyValueFactory<>("id"));
+            register_name_column2.setCellValueFactory(new PropertyValueFactory<>("username"));
+            register_list_table2.setItems(registerlist);
         }
     }
     
