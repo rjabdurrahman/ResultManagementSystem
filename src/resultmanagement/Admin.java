@@ -22,7 +22,7 @@ public abstract class Admin extends User{
         //Register Remove end.
     }
     //abstract methodp
-    abstract void manageAdmin();
+    abstract void manageAdmin(String username, ObservableList<LocalAdmin> alist);
     
     public void publishResult(){
         //here

@@ -390,7 +390,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="admin_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+      <AnchorPane fx:id="admin_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
@@ -434,7 +434,7 @@
                <children>
                   <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="226.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="localAdmin_register_add_btn" layoutX="164.0" layoutY="174.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                        <JFXButton fx:id="admin_localAdmin_add_btn" layoutX="164.0" layoutY="174.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>
@@ -497,7 +497,7 @@
                   </Label>
                   <AnchorPane layoutX="14.0" layoutY="294.0" minHeight="-Infinity" prefHeight="115.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="localAdmin_register_remove_btn" layoutX="139.0" layoutY="69.0" onAction="#adminAct" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0747A6;" text="Remove" textFill="WHITE">
+                        <JFXButton fx:id="admin_localAdmin_remove_btn" layoutX="139.0" layoutY="69.0" onAction="#adminAct" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0747A6;" text="Remove" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="MINUS_SQUARE" size="14.0" />
                            </graphic>

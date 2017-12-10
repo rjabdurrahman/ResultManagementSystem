@@ -1,5 +1,7 @@
 package resultmanagement;
 
+import javafx.collections.ObservableList;
+
 public class LocalAdmin extends Admin{
     
     public LocalAdmin(int id, String username, String password) {
@@ -7,7 +9,7 @@ public class LocalAdmin extends Admin{
     }
 
     @Override
-    void manageAdmin() {
+    void manageAdmin(String username, ObservableList<LocalAdmin> alist) {
         //here
     }
 }

@@ -9,8 +9,14 @@ public class GlobalAdmin extends Admin{
     }
     
     @Override
-    public void manageAdmin(){
-        //here
+    public void manageAdmin(String username, ObservableList<LocalAdmin> alist){
+        for(LocalAdmin a : alist){
+            if(a.getUsername().equals(username)){
+                alist.remove(a);
+                break;
+            }
+        }
+        //Local Admin Remove end.
     }
     //Overloaded Overridden ManageAdmin
     public void manageAdmin(String username,String password,ObservableList<LocalAdmin> alist){
