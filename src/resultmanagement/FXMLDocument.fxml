@@ -9,7 +9,6 @@
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -1023,7 +1022,7 @@
                   </AnchorPane>
                   <AnchorPane layoutX="298.0" layoutY="242.0" prefHeight="177.0" prefWidth="269.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="teacher_add_btn1" layoutX="155.0" layoutY="139.0" onAction="#registerAct" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                        <JFXButton fx:id="reg_course_btn" layoutX="155.0" layoutY="139.0" onAction="#registerAct" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>
@@ -1039,14 +1038,18 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fx:id="addst_warning_close121" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <JFXTextField fx:id="teacher_name_input1" layoutX="27.0" layoutY="54.0" prefHeight="25.0" prefWidth="203.0" promptText="Username" styleClass="promptd">
+                        <JFXTextField fx:id="registerFor_id" layoutX="27.0" layoutY="54.0" prefHeight="25.0" prefWidth="203.0" promptText="User ID" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXComboBox layoutX="27.0" layoutY="97.0" prefHeight="25.0" prefWidth="203.0" promptText="Select Course" />
-                        <JFXRadioButton layoutX="14.0" layoutY="23.0" text="Teacher" />
-                        <RadioButton layoutX="136.0" layoutY="23.0" mnemonicParsing="false" text="Student" />
+                        <JFXComboBox fx:id="regCourse_combo" layoutX="27.0" layoutY="97.0" prefHeight="25.0" prefWidth="203.0" promptText="Select Course" />
+                        <JFXRadioButton fx:id="regForTeacher" layoutX="14.0" layoutY="23.0" text="Teacher">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="registerCourseFor" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="regForStudent" layoutX="129.0" layoutY="23.0" text="Student" toggleGroup="$registerCourseFor" />
                      </children>
                   </AnchorPane>
                </children>

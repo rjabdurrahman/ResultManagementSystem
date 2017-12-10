@@ -1,6 +1,7 @@
 package resultmanagement;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
@@ -327,9 +328,14 @@ public class FXMLDocumentController implements Initializable {
     //Registers Panel
     Register register = new Register(124, "reg", "123");
     @FXML
-    private JFXButton register_logout_btn,course_add_btn,student_add_btn,teacher_add_btn;
+    private JFXButton register_logout_btn,course_add_btn,student_add_btn,teacher_add_btn,reg_course_btn;
     @FXML
-    private JFXTextField course_code_input,course_name_input,course_credit_input,student_id_input,student_name_input,student_password_input,teacher_id_input,teacher_name_input,teacher_password_input;
+    private JFXTextField course_code_input,course_name_input,course_credit_input,student_id_input,student_name_input,student_password_input,teacher_id_input,teacher_name_input,teacher_password_input,registerFor_id;
+    @FXML
+    private JFXRadioButton regForTeacher,regForStudent;
+    @FXML
+    private JFXComboBox<String> regCourse_combo;
+    public ObservableList<String> course_code_list = FXCollections.observableArrayList();
     // -- Register Actions
     @FXML
     void registerAct(ActionEvent event) {
@@ -338,6 +344,8 @@ public class FXMLDocumentController implements Initializable {
         }
         else if(event.getSource() == course_add_btn){
             register.addCourses(Integer.parseInt(course_code_input.getText()), course_name_input.getText(), Integer.parseInt(course_credit_input.getText()));
+            course_code_list.add(course_code_input.getText());
+            regCourse_combo.setItems(course_code_list);
             clear(course_code_input,course_name_input,course_credit_input);
             JOptionPane.showMessageDialog(null, "Course Added Successfully!");
         }
@@ -350,6 +358,16 @@ public class FXMLDocumentController implements Initializable {
             register.addTeacher(Integer.parseInt(teacher_id_input.getText()), teacher_name_input.getText(), teacher_password_input.getText());
             clear(teacher_id_input,teacher_name_input,teacher_password_input);
             JOptionPane.showMessageDialog(null, "Teacher Added Successfully!");
+        }
+        else if(event.getSource() == reg_course_btn && !regForTeacher.isSelected() && !regForStudent.isSelected()){
+            JOptionPane.showMessageDialog(null,"Please Select Type!");
+        }
+        else if(event.getSource() == reg_course_btn && regForTeacher.isSelected()){
+            //Warning Needed!
+            register.regStudentCourses(Integer.parseInt(registerFor_id.getText()), Integer.parseInt(regCourse_combo.getValue()));
+        }
+        else if(event.getSource() == reg_course_btn && regForStudent.isSelected()){
+            System.out.println("Student");
         }
     }
     //Teachers Panel
