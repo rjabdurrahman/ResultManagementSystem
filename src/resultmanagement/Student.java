@@ -5,7 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Student extends User{
-    public ObservableList<Course> courseList = FXCollections.observableArrayList();;
+    public ObservableList<Course> courseList = FXCollections.observableArrayList();
     public ArrayList<String> teacherRecommends = new ArrayList<>();
     public String advisorMark;
     

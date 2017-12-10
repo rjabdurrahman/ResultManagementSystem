@@ -143,7 +143,16 @@ public class FXMLDocumentController implements Initializable {
             if (User.login(teacher_username_field.getText(),teacher_password_field.getText(),userlist)) {
                 teacher_login_panel.setVisible(false);
                 teacher_dashboard.setVisible(true);
+                teacher_courseCode_list.clear();
+                teacher_list.forEach(t->{
+                    if(t.getUsername().equals(teacher_username_field.getText())){
+                        t.courseList.forEach(c->{
+                            teacher_courseCode_list.add(Integer.toString(c.getCode()));
+                        });
+                    }
+                });
                 clear(teacher_username_field,teacher_password_field);
+                teacherCourse_combo.setItems(teacher_courseCode_list);
             }
             else{
                 JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
@@ -362,23 +371,36 @@ public class FXMLDocumentController implements Initializable {
         else if(event.getSource() == reg_course_btn && !regForTeacher.isSelected() && !regForStudent.isSelected()){
             JOptionPane.showMessageDialog(null,"Please Select Type!");
         }
-        else if(event.getSource() == reg_course_btn && regForTeacher.isSelected()){
+        else if(event.getSource() == reg_course_btn && regForStudent.isSelected()){
             //Warning Needed!
             register.regStudentCourses(Integer.parseInt(registerFor_id.getText()), Integer.parseInt(regCourse_combo.getValue()));
+            clear(registerFor_id);
+            JOptionPane.showMessageDialog(null, "Student's Course Added Successfully!");
         }
-        else if(event.getSource() == reg_course_btn && regForStudent.isSelected()){
-            System.out.println("Student");
+        else if(event.getSource() == reg_course_btn && regForTeacher.isSelected()){
+            //Warning Needed!
+            register.regTeacherCourses(Integer.parseInt(registerFor_id.getText()), Integer.parseInt(regCourse_combo.getValue()));
+            clear(registerFor_id);
+            JOptionPane.showMessageDialog(null, "Teacher's Course Added Successfully!");
         }
     }
     //Teachers Panel
     Teacher teacher = new Teacher(818, "teacher", "232");
     @FXML
-    private JFXButton teacher_logout_btn;
+    private JFXButton teacher_logout_btn,teacher_markAdd_btn;
+    @FXML
+    private JFXTextField techer_studentId_input,teacher_mark_input;
+    @FXML
+    private JFXComboBox<String> teacherCourse_combo;
+    public ObservableList<String> teacher_courseCode_list = FXCollections.observableArrayList();
     // -- Teachers Actions
     @FXML
     void teacherAct(ActionEvent event) {
         if(event.getSource() == teacher_logout_btn){
             teacher_dashboard.setVisible(false);
+        }
+        else if(event.getSource() == teacher_markAdd_btn){
+            System.out.println("ok");
         }
     }
     

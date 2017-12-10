@@ -1108,7 +1108,7 @@
                <children>
                   <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="203.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="course_add_btn1" layoutX="164.0" layoutY="146.0" onAction="#registerAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                        <JFXButton fx:id="teacher_markAdd_btn" layoutX="164.0" layoutY="146.0" onAction="#teacherAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>
@@ -1124,17 +1124,17 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fx:id="addst_warning_close11" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <JFXTextField fx:id="course_name_input1" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Student Id" styleClass="promptd">
+                        <JFXTextField fx:id="techer_studentId_input" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Student Id" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="course_credit_input1" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Marks" styleClass="promptd">
+                        <JFXTextField fx:id="teacher_mark_input" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Marks" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXComboBox layoutX="27.0" layoutY="23.0" prefHeight="28.0" prefWidth="203.0" promptText="Select Course" />
+                        <JFXComboBox fx:id="teacherCourse_combo" layoutX="27.0" layoutY="23.0" prefHeight="28.0" prefWidth="203.0" promptText="Select Course" />
                      </children>
                   </AnchorPane>
                   <Label layoutX="17.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Add Marks">
@@ -1154,7 +1154,7 @@
                         <FontAwesomeIconView fx:id="addst_warning_close111" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
                      </children>
                   </AnchorPane>
-                  <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Add Student">
+                  <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="View Result">
                      <font>
                         <Font name="Century Gothic" size="15.0" />
                      </font>

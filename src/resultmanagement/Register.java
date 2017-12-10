@@ -28,7 +28,16 @@ public class Register extends User{
         }
     }
     public void regTeacherCourses(int tid, int cid){
-        //here
+        for(Teacher t : FXMLDocumentController.teacher_list){
+            if(t.getId() == tid){
+                for(Course c : FXMLDocumentController.course_list){
+                    if(c.getCode()==cid){
+                        t.courseList.add(new Course(c.getCode(), c.getName(), c.getCredit()));
+                        break;
+                    }
+                }
+            }
+        }
     }
     
 }
