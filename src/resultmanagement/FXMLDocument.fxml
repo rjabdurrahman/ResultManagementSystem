@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -8,6 +9,7 @@
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -862,7 +864,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="register_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+      <AnchorPane fx:id="register_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
@@ -1019,6 +1021,34 @@
                         </JFXTextField>
                      </children>
                   </AnchorPane>
+                  <AnchorPane layoutX="298.0" layoutY="242.0" prefHeight="177.0" prefWidth="269.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <JFXButton fx:id="teacher_add_btn1" layoutX="155.0" layoutY="139.0" onAction="#registerAct" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check121" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning121" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close121" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <JFXTextField fx:id="teacher_name_input1" layoutX="27.0" layoutY="54.0" prefHeight="25.0" prefWidth="203.0" promptText="Username" styleClass="promptd">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXComboBox layoutX="27.0" layoutY="97.0" prefHeight="25.0" prefWidth="203.0" promptText="Select Course" />
+                        <JFXRadioButton layoutX="14.0" layoutY="23.0" text="Teacher" />
+                        <RadioButton layoutX="136.0" layoutY="23.0" mnemonicParsing="false" text="Student" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
             <JFXButton fx:id="register_logout_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="168.0" onAction="#registerAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Log Out" textFill="WHITE">
@@ -1031,7 +1061,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="teacher_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="teacher_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
@@ -1083,11 +1113,6 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXTextField fx:id="course_code_input1" layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="203.0" promptText="Course Code" styleClass="promptd">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
                         <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
                         <FontAwesomeIconView fx:id="addst_warning_check11" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
                         <Label fx:id="addst_warning11" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
@@ -1096,16 +1121,17 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fx:id="addst_warning_close11" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <JFXTextField fx:id="course_name_input1" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Course Name" styleClass="promptd">
+                        <JFXTextField fx:id="course_name_input1" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Student Id" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="course_credit_input1" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Course Credit" styleClass="promptd">
+                        <JFXTextField fx:id="course_credit_input1" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Marks" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
+                        <JFXComboBox layoutX="27.0" layoutY="23.0" prefHeight="28.0" prefWidth="203.0" promptText="Select Course" />
                      </children>
                   </AnchorPane>
                   <Label layoutX="17.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Add Marks">

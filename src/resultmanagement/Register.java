@@ -15,10 +15,10 @@ public class Register extends User{
     public void addTeacher(int id, String username, String password){
         FXMLDocumentController.teacher_list.add(new Teacher(id, username, password));
     }
-    public void regStudentCourses(){
+    public void regStudentCourses(int sid, int cid){
         //here
     }
-    public void regTeacherCourses(){
+    public void regTeacherCourses(int tid, int cid){
         //here
     }
     
