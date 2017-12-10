@@ -628,10 +628,10 @@
       </AnchorPane>
       <AnchorPane fx:id="localAdmin_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
-            <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
+            <AnchorPane fx:id="localAdmin_menubar" prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
                   <Line endX="217.0" layoutY="175.0" stroke="GREY" />
-                  <JFXButton fx:id="admin_manageAdmin_btn1" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="48.0" onAction="#adminAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Manage Admin" textFill="WHITE">
+                  <JFXButton fx:id="localAdmin_manageRegister_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="48.0" onAction="#localAdminAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Manage Register" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_STAR" size="16.0" />
                      </graphic>
@@ -648,7 +648,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <JFXButton fx:id="admin_manageRegister_btn1" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" onAction="#adminAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Manage Register" textFill="WHITE">
+                  <JFXButton fx:id="localAdmin_myMenu_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" onAction="#localAdminAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="My Menu" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
                      </graphic>
@@ -666,7 +666,104 @@
                   </JFXButton>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="admin_manageAdmin_panel1" layoutX="218.0" prefHeight="420.0" prefWidth="581.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="localAdmin_manageRegister_panel" layoutX="218.0" prefHeight="420.0" prefWidth="581.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="226.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <JFXButton fx:id="admin_register_add_btn2" layoutX="164.0" layoutY="174.0" onAction="#localAdminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="register_username_input2" labelFloat="true" layoutX="27.0" layoutY="27.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Username" styleClass="promptd">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check2" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning2" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close2" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <JFXPasswordField fx:id="register_password_input2" labelFloat="true" layoutX="27.0" layoutY="76.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Password" styleClass="prompt">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXPasswordField fx:id="register_cpassword_input2" labelFloat="true" layoutX="27.0" layoutY="125.0" prefHeight="25.0" prefWidth="203.0" promptText="Confirm Password" styleClass="prompt">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="17.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Add Register">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="378.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check21" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning21" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close21" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <TableView fx:id="register_list_table2" layoutY="5.0" prefHeight="378.0" prefWidth="272.0" tableMenuButtonVisible="true">
+                           <columns>
+                              <TableColumn fx:id="register_id_column2" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="register_name_column2" prefWidth="187.0" text="UserName" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Register List">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="14.0" layoutY="294.0" minHeight="-Infinity" prefHeight="115.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <JFXButton fx:id="admin_register_remove_btn2" layoutX="139.0" layoutY="69.0" onAction="#adminAct" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0747A6;" text="Remove" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="MINUS_SQUARE" size="14.0" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="register_username_input_remove2" labelFloat="true" layoutX="24.0" layoutY="25.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Username" styleClass="promptd">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check31" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning31" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close31" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="17.0" layoutY="267.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Remove Register">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="localAdmin_myMenu_panel" layoutX="218.0" prefHeight="420.0" prefWidth="581.0" style="-fx-background-color: white;" visible="false">
                <children>
                   <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="226.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
@@ -757,103 +854,6 @@
                      </children>
                   </AnchorPane>
                   <Label layoutX="17.0" layoutY="267.0" prefHeight="24.0" prefWidth="197.0" style="-fx-background-color: white;" text="Remove Local Admin">
-                     <font>
-                        <Font name="Century Gothic" size="15.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="admin_manageRegister_panel1" layoutX="218.0" prefHeight="420.0" prefWidth="581.0" style="-fx-background-color: white;" visible="false">
-               <children>
-                  <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="226.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
-                     <children>
-                        <JFXButton fx:id="admin_register_add_btn1" layoutX="164.0" layoutY="174.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
-                           </graphic>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXTextField fx:id="register_username_input2" labelFloat="true" layoutX="27.0" layoutY="27.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Username" styleClass="promptd">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
-                        <FontAwesomeIconView fx:id="addst_warning_check2" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <Label fx:id="addst_warning2" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <FontAwesomeIconView fx:id="addst_warning_close2" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <JFXPasswordField fx:id="register_password_input2" labelFloat="true" layoutX="27.0" layoutY="76.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Password" styleClass="prompt">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXPasswordField>
-                        <JFXPasswordField fx:id="register_cpassword_input2" labelFloat="true" layoutX="27.0" layoutY="125.0" prefHeight="25.0" prefWidth="203.0" promptText="Confirm Password" styleClass="prompt">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXPasswordField>
-                     </children>
-                  </AnchorPane>
-                  <Label layoutX="17.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Add Register">
-                     <font>
-                        <Font name="Century Gothic" size="15.0" />
-                     </font>
-                  </Label>
-                  <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="378.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
-                     <children>
-                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
-                        <FontAwesomeIconView fx:id="addst_warning_check21" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <Label fx:id="addst_warning21" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <FontAwesomeIconView fx:id="addst_warning_close21" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <TableView fx:id="register_list_table1" layoutY="5.0" prefHeight="378.0" prefWidth="272.0" tableMenuButtonVisible="true">
-                           <columns>
-                              <TableColumn fx:id="register_id_column1" prefWidth="75.0" text="ID" />
-                              <TableColumn fx:id="register_name_column1" prefWidth="187.0" text="UserName" />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-                  <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Register List">
-                     <font>
-                        <Font name="Century Gothic" size="15.0" />
-                     </font>
-                  </Label>
-                  <AnchorPane layoutX="14.0" layoutY="294.0" minHeight="-Infinity" prefHeight="115.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
-                     <children>
-                        <JFXButton fx:id="admin_register_remove_btn1" layoutX="139.0" layoutY="69.0" onAction="#adminAct" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0747A6;" text="Remove" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="MINUS_SQUARE" size="14.0" />
-                           </graphic>
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXTextField fx:id="register_username_input_remove1" labelFloat="true" layoutX="24.0" layoutY="25.0" prefHeight="25.0" prefWidth="203.0" promptText="Register Username" styleClass="promptd">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
-                        <FontAwesomeIconView fx:id="addst_warning_check31" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <Label fx:id="addst_warning31" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <FontAwesomeIconView fx:id="addst_warning_close31" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                     </children>
-                  </AnchorPane>
-                  <Label layoutX="17.0" layoutY="267.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Remove Register">
                      <font>
                         <Font name="Century Gothic" size="15.0" />
                      </font>

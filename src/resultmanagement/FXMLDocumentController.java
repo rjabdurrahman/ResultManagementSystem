@@ -186,6 +186,7 @@ public class FXMLDocumentController implements Initializable {
             admin_manageRegister_panel.setVisible(true);
             admin_manageRegister_panel.toFront();
         }
+        //Add and Remove Register Start
         else if(event.getSource()==admin_register_add_btn){
             //Check existed username needed
             if(register_password_input.getText().equals(register_cpassword_input.getText())){
@@ -236,12 +237,63 @@ public class FXMLDocumentController implements Initializable {
     }
     //Local Admin Panel
     @FXML
-    JFXButton localAdmin_logout_btn;
+    AnchorPane localAdmin_manageRegister_panel,localAdmin_myMenu_panel;
+    
+    @FXML
+    JFXButton localAdmin_logout_btn,localAdmin_manageRegister_btn,localAdmin_myMenu_btn,admin_register_add_btn2;
+    
+    @FXML
+    private JFXTextField register_username_input2,register_username_input_remove2,localAdmin_username_input2,localAdmin_username_input_remove2;
+
+    @FXML
+    private JFXPasswordField register_password_input2, register_cpassword_input2,localAdmin_password_input2,localAdmin_cpassword_input2;
+    // -- Register List Table
+    @FXML
+    private TableView<Register> register_list_table2;
+
+    @FXML
+    private TableColumn<Register, Integer> register_id_column2;
+
+    @FXML
+    private TableColumn<Register, String> register_name_column2;
     // -- Local Admin Actions
     @FXML
     void localAdminAct(ActionEvent event) {
         if(event.getSource() == localAdmin_logout_btn){
             localAdmin_dashboard.setVisible(false);
+        }
+        else if(event.getSource() == localAdmin_manageRegister_btn){
+            localAdmin_manageRegister_panel.setVisible(true);
+            localAdmin_manageRegister_panel.toFront();
+        }
+        else if(event.getSource() == localAdmin_myMenu_btn){
+            localAdmin_myMenu_panel.setVisible(true);
+            localAdmin_myMenu_panel.toFront();
+        }
+        else if(event.getSource()==admin_register_add_btn2){
+            //Check existed username needed
+            if(register_password_input2.getText().equals(register_cpassword_input2.getText())){
+                for(Register r: registerlist){
+                    if(r.getUsername().equals(register_username_input2.getText())){
+                        JOptionPane.showMessageDialog(null, "Username Already Existed!");
+                        return;
+                    }
+                } //Check Repeating Username End
+                admin.manageRegister(register_username_input2.getText(), register_password_input2.getText(), registerlist);
+                clear(register_username_input2, register_password_input2, register_cpassword_input2);
+                //Table Data Load
+                register_id_column2.setCellValueFactory(new PropertyValueFactory<>("id"));
+                register_name_column2.setCellValueFactory(new PropertyValueFactory<>("username"));
+                register_list_table2.setItems(registerlist);
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Password Not Matched!");
+            //Register Added End
+        }
+        else if(event.getSource()==admin_register_remove_btn){
+            admin.manageRegister(register_username_input_remove.getText(), registerlist);
+            clear(register_username_input_remove);
+            register_list_table.setItems(registerlist);
         }
     }
     
