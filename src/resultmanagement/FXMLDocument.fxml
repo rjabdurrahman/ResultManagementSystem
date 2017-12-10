@@ -1031,5 +1031,116 @@
             </JFXButton>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="teacher_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
+               <children>
+                  <Line endX="217.0" layoutY="212.0" stroke="GREY" />
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="48.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Add Marks" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Pane prefHeight="35.0" prefWidth="218.0" style="-fx-background-color: gray;">
+                     <children>
+                        <Label layoutX="46.0" layoutY="8.0" text="Teacher Panel" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="View Result" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="128.0" prefHeight="34.0" prefWidth="173.0" styleClass="menu" text="Add Recommendation" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
+                     </graphic>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="218.0" prefHeight="420.0" prefWidth="581.0">
+               <children>
+                  <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="203.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <JFXButton fx:id="course_add_btn1" layoutX="164.0" layoutY="146.0" onAction="#registerAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
+                           </graphic>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="course_code_input1" layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="203.0" promptText="Course Code" styleClass="promptd">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check11" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning11" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close11" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <JFXTextField fx:id="course_name_input1" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Course Name" styleClass="promptd">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="course_credit_input1" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Course Credit" styleClass="promptd">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="17.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Add Marks">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="203.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check111" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning111" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close111" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="Add Student">
+                     <font>
+                        <Font name="Century Gothic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="teacher_logout_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="168.0" onAction="#teacherAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Log Out" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="POWER" size="17.0" />
+               </graphic>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

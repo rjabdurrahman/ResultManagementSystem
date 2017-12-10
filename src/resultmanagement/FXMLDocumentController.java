@@ -47,7 +47,7 @@ public class FXMLDocumentController implements Initializable {
     private AnchorPane admin_login_panel, register_login_panel, teacher_login_panel, consultant_login_panel, advisor_login_panel;
 
     @FXML
-    private AnchorPane admin_dashboard,localAdmin_dashboard, register_dashboard;
+    private AnchorPane admin_dashboard,localAdmin_dashboard, register_dashboard, teacher_dashboard;
     
     @FXML
     private ToggleGroup admin_rype_toggle, register_rype_toggle;
@@ -76,13 +76,13 @@ public class FXMLDocumentController implements Initializable {
     private JFXRadioButton admin_global_radio, admin_local_radio;
     
     @FXML
-    private JFXButton admin_login_btn, register_login_btn;
+    private JFXButton admin_login_btn, register_login_btn, teacher_login_btn;
     
     @FXML
-    private JFXTextField admin_username_field,register_username_field;
+    private JFXTextField admin_username_field,register_username_field,teacher_username_field;
 
     @FXML
-    private JFXPasswordField admin_password_field,register_password_field;
+    private JFXPasswordField admin_password_field,register_password_field,teacher_password_field;
     
     //Field Cleaner
     public void clear(TextField ... field){
@@ -135,7 +135,19 @@ public class FXMLDocumentController implements Initializable {
             else{
                 JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
             }
-        }
+        }//Register Login End
+        else if (event.getSource() == teacher_login_btn) {
+            userlist.clear();
+            userlist.addAll(teacher_list);
+            if (User.login(teacher_username_field.getText(),teacher_password_field.getText(),userlist)) {
+                teacher_login_panel.setVisible(false);
+                teacher_dashboard.setVisible(true);
+                clear(teacher_username_field,teacher_password_field);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
+            }
+        }//Teacher Login End
     }
     
     @FXML
@@ -338,6 +350,17 @@ public class FXMLDocumentController implements Initializable {
             register.addTeacher(Integer.parseInt(teacher_id_input.getText()), teacher_name_input.getText(), teacher_password_input.getText());
             clear(teacher_id_input,teacher_name_input,teacher_password_input);
             JOptionPane.showMessageDialog(null, "Teacher Added Successfully!");
+        }
+    }
+    //Teachers Panel
+    Teacher teacher = new Teacher(818, "teacher", "232");
+    @FXML
+    private JFXButton teacher_logout_btn;
+    // -- Teachers Actions
+    @FXML
+    void teacherAct(ActionEvent event) {
+        if(event.getSource() == teacher_logout_btn){
+            teacher_dashboard.setVisible(false);
         }
     }
     
