@@ -314,20 +314,37 @@ public class FXMLDocumentController implements Initializable {
     }
     
     //Registers Panel
+    Register register = new Register(124, "reg", "123");
     @FXML
-    private JFXButton register_logout_btn;
+    private JFXButton register_logout_btn,course_add_btn,student_add_btn,teacher_add_btn;
     @FXML
+    private JFXTextField course_code_input,course_name_input,course_credit_input,student_id_input,student_name_input,student_password_input,teacher_id_input,teacher_name_input,teacher_password_input;
     // -- Register Actions
+    @FXML
     void registerAct(ActionEvent event) {
         if(event.getSource() == register_logout_btn){
             register_dashboard.setVisible(false);
+        }
+        else if(event.getSource() == course_add_btn){
+            register.addCourses(Integer.parseInt(course_code_input.getText()), course_name_input.getText(), Integer.parseInt(course_credit_input.getText()));
+            clear(course_code_input,course_name_input,course_credit_input);
+            JOptionPane.showMessageDialog(null, "Course Added Successfully!");
+        }
+        else if(event.getSource() == student_add_btn){
+            register.addStudent(Integer.parseInt(student_id_input.getText()), student_name_input.getText(), student_password_input.getText());
+            clear(student_id_input,student_name_input,student_password_input);
+            JOptionPane.showMessageDialog(null, "Student Added Successfully!");
+        }
+        else if(event.getSource() == teacher_add_btn){
+            register.addTeacher(Integer.parseInt(teacher_id_input.getText()), teacher_name_input.getText(), teacher_password_input.getText());
+            clear(teacher_id_input,teacher_name_input,teacher_password_input);
+            JOptionPane.showMessageDialog(null, "Teacher Added Successfully!");
         }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         global_adminlist.add(admin);
-        Register register = new Register(124, "reg", "123");
     }
 
 }

@@ -906,7 +906,7 @@
                <children>
                   <AnchorPane layoutX="14.0" layoutY="32.0" prefHeight="203.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="course_add_btn" layoutX="164.0" layoutY="146.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                        <JFXButton fx:id="course_add_btn" layoutX="164.0" layoutY="146.0" onAction="#registerAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>
@@ -946,7 +946,7 @@
                   </Label>
                   <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="203.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="register_reg_btn11" layoutX="164.0" layoutY="146.0" onAction="#adminAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
+                        <JFXButton fx:id="student_add_btn" layoutX="164.0" layoutY="146.0" onAction="#registerAct" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #0747A6;" text=" Add" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>
@@ -954,7 +954,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXTextField fx:id="register_username_input11" layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="203.0" promptText="Student ID" styleClass="promptd">
+                        <JFXTextField fx:id="student_id_input" layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="203.0" promptText="Student ID" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -967,12 +967,12 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fx:id="addst_warning_close11" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <JFXTextField fx:id="register_username_input111" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Student Name" styleClass="promptd">
+                        <JFXTextField fx:id="student_name_input" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Student Name" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="register_username_input1111" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Student Password" styleClass="promptd">
+                        <JFXTextField fx:id="student_password_input" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Student Password" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -986,7 +986,7 @@
                   </Label>
                   <AnchorPane layoutX="17.0" layoutY="241.0" prefHeight="149.0" prefWidth="453.0" style="-fx-background-color: #f7f7f7;">
                      <children>
-                        <JFXButton fx:id="register_reg_btn12" layoutX="305.0" layoutY="17.0" onAction="#adminAct" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #0747A6;" text=" Add Teacher" textFill="WHITE">
+                        <JFXButton fx:id="teacher_add_btn" layoutX="305.0" layoutY="17.0" onAction="#registerAct" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #0747A6;" text=" Add Teacher" textFill="WHITE">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS_SQUARE" size="14.0" />
                            </graphic>
@@ -994,7 +994,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXTextField fx:id="register_username_input11" layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="203.0" promptText="Teacher ID" styleClass="promptd">
+                        <JFXTextField fx:id="teacher_id_input" layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="203.0" promptText="Teacher ID" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -1007,12 +1007,12 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fx:id="addst_warning_close12" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <JFXTextField fx:id="register_username_input111" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Teacher Username" styleClass="promptd">
+                        <JFXTextField fx:id="teacher_name_input" layoutX="27.0" layoutY="61.0" prefHeight="25.0" prefWidth="203.0" promptText="Teacher Username" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="register_username_input1112" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Teacher Password" styleClass="promptd">
+                        <JFXTextField fx:id="teacher_password_input" layoutX="27.0" layoutY="102.0" prefHeight="25.0" prefWidth="203.0" promptText="Teacher Password" styleClass="promptd">
                            <font>
                               <Font size="14.0" />
                            </font>
