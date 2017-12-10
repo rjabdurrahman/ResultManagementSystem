@@ -171,12 +171,12 @@ public class FXMLDocumentController implements Initializable {
             admin_manageRegister_panel.setVisible(true);
             admin_manageRegister_panel.toFront();
         }
-        else if(event.getSource()==admin_register_add_btn){//Worong Here
+        else if(event.getSource()==admin_register_add_btn){
             //Check existed username needed
             if(register_password_input.getText().equals(register_cpassword_input.getText())){
                 for(Register r: registerlist){
                     if(r.getUsername().equals(register_username_input.getText())){
-                        JOptionPane.showMessageDialog(null, "Usernaem Already Existed!");
+                        JOptionPane.showMessageDialog(null, "Username Already Existed!");
                         return;
                     }
                 } //Check Repeating Username End
@@ -197,10 +197,10 @@ public class FXMLDocumentController implements Initializable {
             register_list_table.setItems(registerlist);
         }
         //Golbal Admins Local Admin
-        if(localAdmin_password_input.getText().equals(localAdmin_cpassword_input.getText())){
+        else if(localAdmin_password_input.getText().equals(localAdmin_cpassword_input.getText())){
             for(LocalAdmin r: local_adminlist){
                 if(r.getUsername().equals(localAdmin_username_input.getText())){
-                    JOptionPane.showMessageDialog(null, "Usernaem Already Existed!");
+                    JOptionPane.showMessageDialog(null, "Username Already Existed!");
                     return;
                 }
             } //Check Repeating Username End
