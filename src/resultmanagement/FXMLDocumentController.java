@@ -327,6 +327,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         global_adminlist.add(admin);
+        Register register = new Register(124, "reg", "123");
     }
 
 }
