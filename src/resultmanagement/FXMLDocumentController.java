@@ -31,6 +31,14 @@ public class FXMLDocumentController implements Initializable {
     public static ObservableList<LocalAdmin> local_adminlist = FXCollections.observableArrayList();
     //Register List
     public static ObservableList<Register> registerlist = FXCollections.observableArrayList();
+    //Course List
+    public static ObservableList<Course> course_list = FXCollections.observableArrayList();
+    //Student List
+    public static ObservableList<Student> student_list = FXCollections.observableArrayList();
+    //Teacher List
+    public static ObservableList<Teacher> teacher_list = FXCollections.observableArrayList();
+    //Advisor List
+    public static ObservableList<Advisor> advisor_list = FXCollections.observableArrayList();
 
     @FXML
     private Pane admin_menu, register_menu, teacher_menu, student_menu, consultant_menu, advisor_menu;
