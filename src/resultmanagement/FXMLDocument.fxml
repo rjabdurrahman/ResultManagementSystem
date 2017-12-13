@@ -1064,7 +1064,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="teacher_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="teacher_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
