@@ -1171,11 +1171,11 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="student_login_panel" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="student_login_panel" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
             <AnchorPane layoutX="215.0" layoutY="62.0" prefHeight="258.0" prefWidth="374.0" style="-fx-background-color: #ededed;">
                <children>
-                  <JFXTextField fx:id="student_username_field" layoutX="84.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" styleClass="prompt">
+                  <JFXTextField fx:id="student_username_field" layoutX="84.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Student ID" styleClass="prompt">
                      <font>
                         <Font size="14.0" />
                      </font>

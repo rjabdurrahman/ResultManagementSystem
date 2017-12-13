@@ -80,13 +80,13 @@ public class FXMLDocumentController implements Initializable {
     private JFXRadioButton admin_global_radio, admin_local_radio;
     
     @FXML
-    private JFXButton admin_login_btn, register_login_btn, teacher_login_btn;
+    private JFXButton admin_login_btn, register_login_btn, teacher_login_btn, student_login_btn;
     
     @FXML
-    private JFXTextField admin_username_field,register_username_field,teacher_username_field;
+    private JFXTextField admin_username_field,register_username_field,teacher_username_field,student_username_field;
 
     @FXML
-    private JFXPasswordField admin_password_field,register_password_field,teacher_password_field;
+    private JFXPasswordField admin_password_field,register_password_field,teacher_password_field,student_password_field;
     
     //Field Cleaner
     public void clear(TextField ... field){
@@ -161,6 +161,18 @@ public class FXMLDocumentController implements Initializable {
                 JOptionPane.showMessageDialog(null,"Wrong Username or Password!");
             }
         }//Teacher Login End
+        else if (event.getSource() == student_login_btn) {
+            boolean logged = false;
+            for(Student s : student_list){
+                if(s.getId()==Integer.parseInt(student_username_field.getText()) && s.getPassword().equals(student_password_field.getText())){
+                    clear(student_username_field,student_password_field);
+                    logged = true;
+                    break;
+                }
+            }
+            if(!logged)
+                JOptionPane.showMessageDialog(null,"Wrong StudentID or Password!");
+        }//Student Login End
     }
     
     @FXML
@@ -179,6 +191,7 @@ public class FXMLDocumentController implements Initializable {
         }
         else if (event.getSource() == teacher_login_cancel_btn || event.getSource() == teacher_login_close_btn) {
             teacher_login_panel.setVisible(false);
+            clear(teacher_username_field,teacher_password_field);
         }
         else if (event.getSource() == consultant_login_cancel_btn || event.getSource() == consultant_login_close_btn) {
             consultant_login_panel.setVisible(false);
@@ -188,6 +201,7 @@ public class FXMLDocumentController implements Initializable {
         }
         else if (event.getSource() == student_login_cancel_btn || event.getSource() == student_login_close_btn) {
             student_login_panel.setVisible(false);
+            clear(student_username_field,student_password_field);
         }
 
     }
