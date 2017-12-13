@@ -45,7 +45,7 @@ public class FXMLDocumentController implements Initializable {
     private Pane admin_menu, register_menu, teacher_menu, student_menu, consultant_menu, advisor_menu;
 
     @FXML
-    private AnchorPane admin_login_panel, register_login_panel, teacher_login_panel, consultant_login_panel, advisor_login_panel;
+    private AnchorPane admin_login_panel, register_login_panel, teacher_login_panel, consultant_login_panel, advisor_login_panel,student_login_panel;
 
     @FXML
     private AnchorPane admin_dashboard,localAdmin_dashboard, register_dashboard, teacher_dashboard;
@@ -70,6 +70,9 @@ public class FXMLDocumentController implements Initializable {
         }
         else if (event.getSource() == advisor_menu) {
             advisor_login_panel.setVisible(true);
+        }
+        else if (event.getSource() == student_menu) {
+            student_login_panel.setVisible(true);
         }
     }
     //Login Panels Fields
@@ -161,7 +164,7 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    private JFXButton admin_login_cancel_btn, admin_login_close_btn, register_login_cancel_btn, register_login_close_btn, teacher_login_cancel_btn, teacher_login_close_btn, consultant_login_cancel_btn, consultant_login_close_btn, advisor_login_cancel_btn, advisor_login_close_btn;
+    private JFXButton admin_login_cancel_btn, admin_login_close_btn, register_login_cancel_btn, register_login_close_btn, teacher_login_cancel_btn, teacher_login_close_btn, consultant_login_cancel_btn, consultant_login_close_btn, advisor_login_cancel_btn, advisor_login_close_btn,student_login_cancel_btn,student_login_close_btn;
 
     //Cancel Button Action
     @FXML
@@ -182,6 +185,9 @@ public class FXMLDocumentController implements Initializable {
         }
         else if (event.getSource() == advisor_login_cancel_btn || event.getSource() == advisor_login_close_btn) {
             advisor_login_panel.setVisible(false);
+        }
+        else if (event.getSource() == student_login_cancel_btn || event.getSource() == student_login_close_btn) {
+            student_login_panel.setVisible(false);
         }
 
     }
