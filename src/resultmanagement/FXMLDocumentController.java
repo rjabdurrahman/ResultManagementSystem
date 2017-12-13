@@ -432,6 +432,16 @@ public class FXMLDocumentController implements Initializable {
             });
         }
     }
+    // -- Students Actions
+    @FXML
+    private JFXButton student_logout_btn;
+    
+    @FXML
+    void studentAct(ActionEvent event) {
+        if(event.getSource() == student_logout_btn){
+            student_dashboard.setVisible(false);
+        }
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
