@@ -391,6 +391,63 @@
             </AnchorPane>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="student_login_panel" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <AnchorPane layoutX="215.0" layoutY="62.0" prefHeight="258.0" prefWidth="374.0" style="-fx-background-color: #ededed;">
+               <children>
+                  <JFXTextField fx:id="student_username_field" layoutX="84.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Student ID" styleClass="prompt">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="student_password_field" layoutX="86.0" layoutY="139.0" prefHeight="25.0" prefWidth="230.0" promptText="Password" styleClass="prompt">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton fx:id="student_login_btn" layoutX="244.0" layoutY="190.0" onAction="#loginAct" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #0747A6;" text="LogIn" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="student_login_cancel_btn" layoutX="162.0" layoutY="190.0" onAction="#login_cancel_act" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #0747A6;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <MaterialDesignIconView fill="#0747a6" glyphName="ACCOUNT" layoutX="55.0" layoutY="124.0" size="22.0" />
+                  <MaterialDesignIconView fill="#0747a6" glyphName="KEY" layoutX="55.0" layoutY="163.0" size="22.0" />
+                  <JFXRadioButton layoutX="45.0" layoutY="63.0" text="Local">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="admin_rype_toggle1111" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton layoutX="172.0" layoutY="63.0" text="Foreign" toggleGroup="$admin_rype_toggle1111">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXRadioButton>
+                  <Line endX="262.0" layoutX="107.0" layoutY="42.0" startX="-100.0" stroke="#0747a6" />
+                  <Label layoutX="17.0" layoutY="8.0" text="Student Login">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="student_login_close_btn" contentDisplay="CENTER" layoutX="336.0" onAction="#login_cancel_act" prefHeight="30.0" prefWidth="35.0" style="-fx-background-color: #0747A6;" text=" " textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="18" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="admin_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
@@ -1171,59 +1228,65 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="student_login_panel" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+      <AnchorPane fx:id="student_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
-            <AnchorPane layoutX="215.0" layoutY="62.0" prefHeight="258.0" prefWidth="374.0" style="-fx-background-color: #ededed;">
+            <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
-                  <JFXTextField fx:id="student_username_field" layoutX="84.0" layoutY="100.0" prefHeight="25.0" prefWidth="230.0" promptText="Student ID" styleClass="prompt">
+                  <Line endX="217.0" layoutY="170.0" stroke="GREY" />
+                  <Pane prefHeight="35.0" prefWidth="218.0" style="-fx-background-color: gray;">
+                     <children>
+                        <Label layoutX="46.0" layoutY="8.0" text="Student Dashboard" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="23.0" layoutY="55.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="View Result" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
+                     </graphic>
                      <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXTextField>
-                  <JFXPasswordField fx:id="student_password_field" layoutX="86.0" layoutY="139.0" prefHeight="25.0" prefWidth="230.0" promptText="Password" styleClass="prompt">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXPasswordField>
-                  <JFXButton fx:id="student_login_btn" layoutX="244.0" layoutY="190.0" onAction="#loginAct" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #0747A6;" text="LogIn" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="student_login_cancel_btn" layoutX="162.0" layoutY="190.0" onAction="#login_cancel_act" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #0747A6;" text="Cancel" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
+                        <Font size="13.0" />
                      </font>
                   </JFXButton>
-                  <MaterialDesignIconView fill="#0747a6" glyphName="ACCOUNT" layoutX="55.0" layoutY="124.0" size="22.0" />
-                  <MaterialDesignIconView fill="#0747a6" glyphName="KEY" layoutX="55.0" layoutY="163.0" size="22.0" />
-                  <JFXRadioButton layoutX="45.0" layoutY="63.0" text="Local">
+                  <JFXButton alignment="BASELINE_LEFT" layoutX="23.0" layoutY="89.0" prefHeight="34.0" prefWidth="173.0" styleClass="menu" text="Option" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
+                     </graphic>
                      <font>
-                        <Font size="14.0" />
+                        <Font size="13.0" />
                      </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="admin_rype_toggle1111" />
-                     </toggleGroup>
-                  </JFXRadioButton>
-                  <JFXRadioButton layoutX="172.0" layoutY="63.0" text="Foreign" toggleGroup="$admin_rype_toggle1111">
+                  </JFXButton>
+                  <JFXButton fx:id="student_logout_btn" alignment="BASELINE_LEFT" layoutX="23.0" layoutY="126.0" onAction="#teacherAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="Log Out" textFill="WHITE">
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="POWER" size="17.0" />
+                     </graphic>
                      <font>
-                        <Font size="14.0" />
+                        <Font size="13.0" />
                      </font>
-                  </JFXRadioButton>
-                  <Line endX="262.0" layoutX="107.0" layoutY="42.0" startX="-100.0" stroke="#0747a6" />
-                  <Label layoutX="17.0" layoutY="8.0" text="Student Login">
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="218.0" prefHeight="420.0" prefWidth="581.0">
+               <children>
+                  <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="346.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                     <children>
+                        <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
+                        <FontAwesomeIconView fx:id="addst_warning_check1111" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <Label fx:id="addst_warning1111" layoutX="42.0" layoutY="157.0" prefHeight="20.0" prefWidth="203.0" text="Warning" textFill="#0747a6" visible="false">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fx:id="addst_warning_close1111" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="View Result">
                      <font>
-                        <Font size="18.0" />
+                        <Font name="Century Gothic" size="15.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="student_login_close_btn" contentDisplay="CENTER" layoutX="336.0" onAction="#login_cancel_act" prefHeight="30.0" prefWidth="35.0" style="-fx-background-color: #0747A6;" text=" " textAlignment="RIGHT" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" size="18" />
-                     </graphic>
-                  </JFXButton>
                </children>
             </AnchorPane>
          </children>

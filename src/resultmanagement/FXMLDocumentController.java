@@ -48,7 +48,7 @@ public class FXMLDocumentController implements Initializable {
     private AnchorPane admin_login_panel, register_login_panel, teacher_login_panel, consultant_login_panel, advisor_login_panel,student_login_panel;
 
     @FXML
-    private AnchorPane admin_dashboard,localAdmin_dashboard, register_dashboard, teacher_dashboard;
+    private AnchorPane admin_dashboard,localAdmin_dashboard, register_dashboard, teacher_dashboard,student_dashboard;
     
     @FXML
     private ToggleGroup admin_rype_toggle, register_rype_toggle;
@@ -167,6 +167,7 @@ public class FXMLDocumentController implements Initializable {
                 if(s.getId()==Integer.parseInt(student_username_field.getText()) && s.getPassword().equals(student_password_field.getText())){
                     clear(student_username_field,student_password_field);
                     logged = true;
+                    student_dashboard.setVisible(true);
                     break;
                 }
             }
