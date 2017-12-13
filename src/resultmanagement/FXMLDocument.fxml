@@ -1228,7 +1228,7 @@
             </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="student_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="student_dashboard" layoutY="60.0" prefHeight="420.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
          <children>
             <AnchorPane prefHeight="420.0" prefWidth="182.0" style="-fx-background-color: #0747A6;">
                <children>
@@ -1242,7 +1242,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="23.0" layoutY="55.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="View Result" textFill="WHITE">
+                  <JFXButton fx:id="student_viewResult_btn" alignment="BASELINE_LEFT" layoutX="23.0" layoutY="55.0" onAction="#studentAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="View Result" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
                      </graphic>
@@ -1270,7 +1270,7 @@
             </AnchorPane>
             <AnchorPane layoutX="218.0" prefHeight="420.0" prefWidth="581.0">
                <children>
-                  <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="346.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                  <AnchorPane layoutX="14.0" layoutY="40.0" prefHeight="346.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
                         <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
                         <FontAwesomeIconView fx:id="addst_warning_check1111" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
@@ -1280,16 +1280,16 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fx:id="addst_warning_close1111" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
-                        <TableView fx:id="student_result_table" layoutY="5.0" prefHeight="339.0" prefWidth="272.0">
+                        <TableView fx:id="student_result_table" layoutY="5.0" prefHeight="339.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                           <columns>
-                            <TableColumn prefWidth="89.0" text="Course Code" />
-                            <TableColumn minWidth="0.0" prefWidth="125.0" text="Course Name" />
-                              <TableColumn prefWidth="47.0" text="GPA" />
+                            <TableColumn fx:id="st_table_course_code" prefWidth="89.0" text="Course Code" />
+                            <TableColumn fx:id="st_table_course_name" minWidth="0.0" prefWidth="125.0" text="Course Name" />
+                              <TableColumn fx:id="st_table_course_gpa" prefWidth="47.0" text="GPA" />
                           </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="View Result">
+                  <Label layoutX="17.0" layoutY="14.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="View Result">
                      <font>
                         <Font name="Century Gothic" size="15.0" />
                      </font>

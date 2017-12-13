@@ -36,6 +36,7 @@ public class FXMLDocumentController implements Initializable {
     public static ObservableList<Course> course_list = FXCollections.observableArrayList();
     //Student List
     public static ObservableList<Student> student_list = FXCollections.observableArrayList();
+    Student logged_student = null;
     //Teacher List
     public static ObservableList<Teacher> teacher_list = FXCollections.observableArrayList();
     //Advisor List
@@ -165,6 +166,7 @@ public class FXMLDocumentController implements Initializable {
             boolean logged = false;
             for(Student s : student_list){
                 if(s.getId()==Integer.parseInt(student_username_field.getText()) && s.getPassword().equals(student_password_field.getText())){
+                    logged_student = s;
                     clear(student_username_field,student_password_field);
                     logged = true;
                     student_dashboard.setVisible(true);
@@ -434,12 +436,32 @@ public class FXMLDocumentController implements Initializable {
     }
     // -- Students Actions
     @FXML
-    private JFXButton student_logout_btn;
+    private JFXButton student_logout_btn,student_viewResult_btn;
+    
+    @FXML
+    private TableView<Course> student_result_table;
+
+    @FXML
+    private TableColumn<Course, Integer> st_table_course_code;
+
+    @FXML
+    private TableColumn<Course, String> st_table_course_name;
+    
+    @FXML
+    private TableColumn<Course, String> st_table_course_gpa;
     
     @FXML
     void studentAct(ActionEvent event) {
         if(event.getSource() == student_logout_btn){
             student_dashboard.setVisible(false);
+            logged_student = null;
+        }
+        else if(event.getSource() == student_viewResult_btn){
+            st_table_course_code.setCellValueFactory(new PropertyValueFactory<>("code"));
+            st_table_course_name.setCellValueFactory(new PropertyValueFactory<>("name"));
+            st_table_course_gpa.setCellValueFactory(new PropertyValueFactory<>("gpa"));
+            student_result_table.setItems(logged_student.courseList);
+            System.out.println(logged_student.getUsername());
         }
     }
     
