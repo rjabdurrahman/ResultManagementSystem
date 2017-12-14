@@ -38,6 +38,7 @@ public class FXMLDocumentController implements Initializable {
     public static ObservableList<Student> student_list = FXCollections.observableArrayList();
     Student logged_student = null;
     //Teacher List
+    Teacher teacher = new Teacher(932, "Hadmid", "123");
     public static ObservableList<Teacher> teacher_list = FXCollections.observableArrayList();
     //Advisor List
     public static ObservableList<Advisor> advisor_list = FXCollections.observableArrayList();
@@ -408,13 +409,24 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     //Teachers Panel
-    Teacher teacher = new Teacher(818, "teacher", "232");
     @FXML
-    private JFXButton teacher_logout_btn,teacher_markAdd_btn;
+    private JFXButton teacher_logout_btn,teacher_markAdd_btn,teacher_viewResult_btn;
     @FXML
     private JFXTextField techer_studentId_input,teacher_mark_input;
     @FXML
     private JFXComboBox<String> teacherCourse_combo;
+    
+    @FXML
+    private TableView<Student> student_result_table2;
+    
+    @FXML
+    private TableColumn<Student, Integer> st_table_student_id2;
+
+    @FXML
+    private TableColumn<Student, String> st_table_student_name2;
+    
+    @FXML
+    private TableColumn<Student, Double> st_table_student_cgpa2;
     public ObservableList<String> teacher_courseCode_list = FXCollections.observableArrayList();
     // -- Teachers Actions
     @FXML
@@ -432,6 +444,13 @@ public class FXMLDocumentController implements Initializable {
                     System.out.println(c.getGpa());
                 });
             });
+        }
+        else if(event.getSource() == teacher_viewResult_btn){
+            teacher.viewResult();
+            st_table_student_id2.setCellValueFactory(new PropertyValueFactory<>("id"));
+            st_table_student_name2.setCellValueFactory(new PropertyValueFactory<>("username"));
+            st_table_student_cgpa2.setCellValueFactory(new PropertyValueFactory<>("cgpa"));
+            student_result_table2.setItems(student_list);
         }
     }
     // -- Students Actions

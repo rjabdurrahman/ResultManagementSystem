@@ -1143,7 +1143,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <JFXButton alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="View Result" textFill="WHITE">
+                  <JFXButton fx:id="teacher_viewResult_btn" alignment="BASELINE_LEFT" layoutX="28.0" layoutY="88.0" onAction="#teacherAct" prefHeight="34.0" prefWidth="163.0" styleClass="menu" text="View Result" textFill="WHITE">
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="16.0" />
                      </graphic>
@@ -1199,7 +1199,7 @@
                         <Font name="Century Gothic" size="15.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="203.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                  <AnchorPane layoutX="298.0" layoutY="32.0" prefHeight="378.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
                      <children>
                         <Pane prefHeight="5.0" prefWidth="272.0" style="-fx-background-color: #999999;" />
                         <FontAwesomeIconView fx:id="addst_warning_check111" fill="#0747a6" glyphName="CHECK" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
@@ -1209,6 +1209,13 @@
                            </font>
                         </Label>
                         <FontAwesomeIconView fx:id="addst_warning_close111" fill="#ff1645" glyphName="CLOSE" layoutX="24.0" layoutY="172.0" size="14.0" visible="false" />
+                        <TableView fx:id="student_result_table2" layoutY="5.0" prefHeight="378.0" prefWidth="272.0" style="-fx-background-color: #f7f7f7;">
+                           <columns>
+                              <TableColumn fx:id="st_table_student_id2" prefWidth="89.0" text="Student ID" />
+                              <TableColumn fx:id="st_table_student_name2" minWidth="0.0" prefWidth="125.0" text="Student Name" />
+                              <TableColumn fx:id="st_table_student_cgpa2" prefWidth="47.0" text="CGPA" />
+                           </columns>
+                        </TableView>
                      </children>
                   </AnchorPane>
                   <Label layoutX="301.0" layoutY="6.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: white;" text="View Result">

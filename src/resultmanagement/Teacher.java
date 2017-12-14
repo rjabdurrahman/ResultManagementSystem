@@ -28,6 +28,18 @@ public class Teacher extends User implements IResultActivity{
 
     @Override
     public void viewResult() {
-        //here
+        double totalgpa = 0;
+        int count = 0;
+        for(Student s : FXMLDocumentController.student_list){
+            for(Course c : s.courseList){
+                totalgpa += c.getGpa();
+                count++;
+            }
+            s.cgpa = totalgpa/count;
+            totalgpa = 0;
+            count = 0;
+            System.out.println("Student: " + s.getId());
+            System.out.println("Student: " + s.cgpa);
+        }
     }
 }
