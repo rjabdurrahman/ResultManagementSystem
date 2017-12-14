@@ -1,9 +1,21 @@
 package resultmanagement;
 
-public class Register extends User{
+import javafx.collections.ObservableList;
 
+public class Register extends Authority{
+    public boolean status;
     public Register(int id, String username, String password) {
         super(id, username, password);
+        status = true;
+    }
+    //Override Authority Abstract Method
+    public void manageRegister(String username,String password,ObservableList<Register> rlist){
+        for(Register r : rlist){
+            if(r.getUsername().equals(username) && r.getPassword().equals(password)){
+                r.status = false;
+                break;
+            }
+        }
     }
     
     public void addCourses(int id, String name, int credit){
