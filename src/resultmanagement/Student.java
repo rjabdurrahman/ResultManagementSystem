@@ -13,6 +13,10 @@ public class Student extends User implements IResultActivity{
     public Student(int id, String username, String password) {
         super(id, username, password);
     }
+    //Constructor Overloading
+    public Student(int id, String password) {
+        super(id, "Unknown", password);
+    }
 
     @Override
     public void viewResult() {
