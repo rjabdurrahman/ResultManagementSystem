@@ -16,6 +16,10 @@ public class LocalAdmin extends Admin{
     
     @Override
     void manageAdmin(String username, String password, ObservableList<LocalAdmin> alist) {
-        //here
+        for(LocalAdmin lc : alist){
+            if(lc.getUsername().equals(username) && lc.getPassword().equals(password)){
+                alist.remove(lc);
+            }
+        }
     }
 }
