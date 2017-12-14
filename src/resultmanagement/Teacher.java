@@ -3,7 +3,7 @@ package resultmanagement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class Teacher extends User{
+public class Teacher extends User implements IResultActivity{
     public ObservableList<Course> courseList = FXCollections.observableArrayList();
     
     public Teacher(int id, String username, String password) {
@@ -23,6 +23,11 @@ public class Teacher extends User{
         }
     }
     public void reportStudent(){
+        //here
+    }
+
+    @Override
+    public void viewResult() {
         //here
     }
 }

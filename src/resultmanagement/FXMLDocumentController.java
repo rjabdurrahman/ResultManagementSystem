@@ -461,6 +461,7 @@ public class FXMLDocumentController implements Initializable {
             st_table_course_name.setCellValueFactory(new PropertyValueFactory<>("name"));
             st_table_course_gpa.setCellValueFactory(new PropertyValueFactory<>("gpa"));
             student_result_table.setItems(logged_student.courseList);
+            logged_student.viewResult();
             System.out.println(logged_student.getUsername());
         }
     }
